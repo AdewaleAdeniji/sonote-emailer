@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "dependencies": {
     "argon2": "^0.30.3",
     "axios": "^1.4.0",
