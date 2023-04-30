@@ -17,7 +17,6 @@
     "nodemailer": "^6.9.1"
   },
   "scripts": {
-    "postinstall": "npm run build",
     "start:dev": "npx nodemon",
     "start": "npm run build && node build/index.js",
     "build": "rimraf ./build && tsc",
