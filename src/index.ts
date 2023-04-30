@@ -11,7 +11,7 @@ app.get("*", (_: Request, res: Response) => {
 app.post("*",  (_: Request, res: Response) => {
   return res.status(404).send("Not found");
 });
-app.use((err: Error, _, res: Response) => {
+app.use((err: Error, _: Request, res: Response) => {
   console.error(err.stack);
   return res.status(500).send("Something went wrong!");
 });
