@@ -18,4 +18,3 @@ app.get("*", (_: Request, res: Response) => {
 app.listen(process.env.PORT || 3001, () => {
   console.log("Server is running on port 3001");
 });
-module.exports = app;
