@@ -15,5 +15,5 @@ app.get("*", function (_, res) {
 //   return res.status(500).send("Something went wrong!");
 // });
 app.listen(process.env.PORT || 3001, function () {
-    console.log("Server is running on port 3001");
+    console.log("Server is running on port ${process.env.PORT}`);
 });
