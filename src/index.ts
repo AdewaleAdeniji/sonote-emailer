@@ -5,7 +5,7 @@ import { Request, Response } from "express";
 
 app.use(cors({ origin: "*" }));
 
-app.get("*", (_: Express.Request, res: Response) => {
+app.get("*", (_: Request, res: Response) => {
   return res.status(404).send("Not found");
 });
 // app.post("*", (_, res) => {
