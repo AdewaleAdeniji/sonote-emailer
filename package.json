@@ -19,7 +19,7 @@
   "scripts": {
     "start:dev": "npx nodemon",
     "start": "npm run build && node build/index.js",
-    "build": "rimraf ./build && tsc",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
