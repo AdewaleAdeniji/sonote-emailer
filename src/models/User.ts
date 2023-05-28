@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -6,29 +6,29 @@ const userSchema = new Schema({
         type: String,
         default: ''
     },
+    userType: {
+        type: String,
+        default: 'user',
+    },
+    apiKey: String,
+    configged: {
+        type: Boolean,
+        default: false,
+    },
     status: {
         type: Boolean,
         default: true,
     },
-    interests: {
-        type:  Array,
-        default: [],
-    },
-    about: {
+    appConfig: {
         type: Object,
-        default: {}
+        default: {
+            "appEmail": "",
+            "appPassword": ""
+        }
     },
-    paired: {
-        type: Boolean,
-        default: false,
-    },
-    lastLogin: {
-        type: String,
-        default: Date.now,
-    },
+    name: String,
     email: String,
     password: String,
-    number: String,
     createdAt: {
         type: Date,
         default: Date.now,
@@ -38,4 +38,5 @@ const userSchema = new Schema({
         default: Date.now,
     },
 })
+exports.user = userSchema;
 module.exports = mongoose.model("users", userSchema);
