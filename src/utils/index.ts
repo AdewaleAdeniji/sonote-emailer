@@ -153,17 +153,6 @@ function replacePlaceholders(templateContent: any, templateValues: any) {
   };
 }
 
-const template = {
-  templateValues: {
-    name: "adewale",
-    number: "08107034667",
-    school: "lautech"
-  },
-  templateContent: "<h1>$name - $number - $school</h1>"
-};
-
-
-
 module.exports = {
   verifyToken,
   signToken,
