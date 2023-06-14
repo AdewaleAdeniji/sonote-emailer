@@ -1,23 +1,25 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-const templateSchema = new Schema({
+const templateSchema = new Schema(
+  {
     userID: {
-        type: String,
-        default: ''
+      type: String,
+      default: "",
+      immutable: true,
     },
-    templateKey: String,
+    templateKey: {
+      type: String,
+      default: "",
+      immutable: true,
+    },
     templateName: String,
     templateVars: Array,
     templateContent: String,
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now,
-    },
-})
+  },
+  {
+    timestamps: true, // Automatically manage createdAt and updatedAt fields
+  }
+);
 exports.templates = templateSchema;
 module.exports = mongoose.model("templates", templateSchema);
