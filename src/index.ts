@@ -51,6 +51,6 @@ mongoose
 //   console.error(err.stack);
 //   return res.status(500).send("Something went wrong!");
 // });
-app.listen(process.env.PORT || 3001, (p: any) => {
-  console.log("Server is running on port 3001");
+app.listen(process.env.PORT || 3002, (p: any) => {
+  console.log("Server is running on port 3002");
 });

@@ -123,6 +123,35 @@ const generateOTP = () => {
   }
   return OTP;
 };
+function replacePlaceholders(templateContent: any, templateValues: any) {
+  // const { templateValues, templateContent } = template;
+  const placeholderRegex = /\$(\w+)/g;
+
+  let replacedContent = templateContent.replace(placeholderRegex, (match: any, key: any) => {
+    if (templateValues.hasOwnProperty(key)) {
+      return templateValues[key];
+    } else {
+      return match; // Keep the placeholder if value not found
+    }
+  });
+
+  // Check if any placeholders remain in the replaced content
+  const remainingPlaceholders = replacedContent.match(placeholderRegex);
+  if (remainingPlaceholders) {
+    const missingValues = remainingPlaceholders.map((placeholder: any) => placeholder.slice(1));
+    return {
+      status: false,
+      content: replacedContent,
+      message: `Missing values: ${missingValues.join(", ")}`
+    };
+  }
+
+  return {
+    status: true,
+    content: replacedContent,
+    message: ""
+  };
+}
 
 module.exports = {
   verifyToken,
@@ -138,4 +167,5 @@ module.exports = {
   decrypt,
   crypt,
   cryptConfig,
+  replacePlaceholders
 };
