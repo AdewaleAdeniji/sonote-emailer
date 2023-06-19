@@ -23,7 +23,7 @@ app.use("/auth", authRoutes);
 app.use("/profile", middlewares.validateUser, userRoutes);
 app.use("/email", middlewares.validateApiKey, sandRoutes);
 
-app.get("/api/health", (_: any, res: Response) => {
+app.get("/health", (_: any, res: Response) => {
   res.send(Utils.responseBody("ok"));
 });
 
